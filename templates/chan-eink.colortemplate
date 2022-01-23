@@ -57,45 +57,49 @@ Background: light
 ; Color palette {{{
 ; Color name         GUI                     Base256     Base16 (optional)
 Color: black         rgb(  0,   0,   0)        ~         Black
-Color: select        rgb(222, 166, 154)        ~         Red
-Color: select2       rgb( 90, 209, 227)        ~         Red
-Color: red           rgb(255,   0,   0)        ~         DarkRed
-Color: green         rgb(  0, 255,   0)        ~         DarkGreen
-Color: yellow        rgb(255, 255,   0)        ~         DarkYellow
-Color: blue          rgb(  0,   0, 255)        ~         DarkBlue
-Color: magenta       rgb(255,   0, 255)        ~         DarkMagenta
-Color: cyan          rgb(  0, 255, 255)        ~         DarkCyan
+Color: grey01        rgb( 48,  48,  48)        ~         DarkGrey
+Color: grey02        rgb( 64,  64,  64)        ~         DarkGrey
+Color: grey03        rgb( 80,  80,  80)        ~         DarkGrey
+Color: grey04        rgb( 96,  96,  96)        ~         Grey
+Color: grey05        rgb(112, 112, 112)        ~         Grey
+Color: grey06        rgb(120, 120, 120)        ~         Grey
+Color: grey07        rgb(127, 127, 127)        ~         Grey
+Color: grey08        rgb(135, 135, 135)        ~         Grey
+Color: grey09        rgb(143, 143, 143)        ~         Grey
+Color: grey10        rgb(159, 159, 159)        ~         Grey
+Color: grey11        rgb(175, 175, 175)        ~         LightGrey
 Color: white         rgb(255, 255, 255)        ~         White
+
 Color: brightblack   rgb(210, 210, 210)        ~         DarkGrey
 Color: brightred     rgb(255, 100,   0)        ~         LightRed
 color: brightgreen   rgb(100, 255,   0)        ~         lightgreen
 color: brightyellow  rgb(255, 255, 100)        ~         lightyellow
-color: brightblue    rgb(  0, 100, 255)        ~         lightblue
-color: brightmagenta rgb(255, 100, 255)        ~         lightmagenta
-color: brightcyan    rgb(100, 255, 255)        ~         lightcyan
-; you may use hexadecimal values, too, and you may provide an explicit base-256 color:
-color: brightwhite   rgb(255, 255, 255)        ~         white
+
 ; }}}
 
 ; terminal colors {{{
-term colors: black red select2 yellow blue magenta cyan white
-term colors: brightblack brightred brightgreen brightyellow
-term colors: brightblue brightmagenta brightcyan brightwhite
+Term colors: black grey02 grey05  grey06 grey08 grey09  grey11 white
+Term colors: black grey06 grey10 white
+Term colors: brightblack brightred brightgreen brightyellow
 ; }}} 
 
-; default highlight groups {{{
-variant: gui
+
+
+
+; Default highlight groups {{{
+Variant: gui
 #if get(g:, '@optionprefix_transp_bg', 0) && !has('gui_running')
-variant: 256 8
+Variant: 256 8
 #if get(g:, '@optionprefix_transp_bg', 0)
-variant: gui 256 8
-    normal           black             none
-    terminal         black             none
+Variant: gui 256 8
+    Normal           black             none
+    Terminal         black             none
 #else
-    normal           black             white
-    terminal         black             white
+    Normal           black             white
+    Terminal         black             white
 #endif
-none
+
+
 ; group              foreground        background        attributes
 colorcolumn          fg                white
 conceal              none              none
@@ -112,25 +116,25 @@ endofbuffer          black             white
 errormsg             black             white             bold,reverse
 foldcolumn           black             white
 folded               black             white             italic
-incsearch            black             brightgreen       g=standout
+incsearch            black             grey11            g=standout
 linenr               black             white
-matchparen           black             brightgreen              
+matchparen           black             grey11              
 modemsg              black             white
 moremsg              black             white
 nontext              black             white
-pmenu                black             brightgreen       
+pmenu                black             grey11       
 pmenusbar            black             white
 pmenusel             black             white             bold,reverse
 pmenuthumb           black             white
 question             black             white
-search               black             magenta
-hlsearch             black             select2
+search               black             grey05
+hlsearch             black             grey06
 signcolumn           black             white
 specialkey           black             white
-spellbad             black             white             s=red
-spellcap             black             white             s=blue
-spelllocal           black             white             s=magenta
-spellrare            black             white             s=cyan reverse
+spellbad             black             white             s=grey06
+spellcap             black             white             s=grey10
+spelllocal           black             white             s=grey04
+spellrare            black             white             s=grey08 reverse
 statusline           black             white
 statuslinenc         black             white
 tabline              black             white
@@ -138,9 +142,9 @@ tablinefill          black             white
 tablinesel           black             white
 title                black             white
 vertsplit            black             white
-visual               black             brightgreen
-VisualNOS            black             brightgreen
-WarningMsg           magenta           white             bold,reverse
+visual               black             grey11
+VisualNOS            black             grey11
+WarningMsg           grey04            white             bold,reverse
 WildMenu             black             white
 Comment              black             none              italic
 Constant             black             none
@@ -156,8 +160,8 @@ Underlined           black             none
 ; See `:help CursorIM`
 CursorIM             none              fg
 ; See `:help window-toolbar`
-ToolbarLine          white            none
-ToolbarButton        white            magenta             bold
+ToolbarLine          grey08            none
+ToolbarButton        white             black             bold
 ; }}} 
 
 ; Additional highlight groups {{{

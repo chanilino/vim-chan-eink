@@ -1,0 +1,19 @@
+*chan_eink.txt*	For Vim version 8.2	Last change: 2022 ene 24
+
+
+		  Chan-Eink color scheme    by Chanilino
+
+Chan-Eink, a color scheme with a unique touch.
+
+==============================================================================
+Color scheme options					chan_eink-options*
+
+						*g:chan_eink_transp_bg*
+Set to 1 if you want a transparent background. Takes effect only in the
+terminal.
+>
+	let g:chan_eink_transp_bg = 0
+<
+
+ vim:tw=78:ts=8:noet:ft=help:norl:
+
